@@ -44,7 +44,7 @@ namespace CriPakTools
 
                 List<FileEntry> entries = null;
 
-                entries = (extractMe.ToUpper() == "ALL") ? cpk.FileTable.Where(x => x.FileType == "FILE").ToList() : cpk.FileTable.Where(x => ((x.DirName != null) ? x.DirName + "/" : "") + x.FileName.ToString().ToLower() == extractMe.ToLower()).ToList();
+                entries = (extractMe.ToUpper() == "ALL") ? cpk.FileTable.Where(x => x.FileType == "FILE").ToList() : cpk.FileTable.Where(x => ((x.DirName != null) ? x.DirName.ToString().ToLower() + "/" : "") + x.FileName.ToString().ToLower() == extractMe.ToLower()).ToList();
 
                 if (entries.Count == 0)
                 {
